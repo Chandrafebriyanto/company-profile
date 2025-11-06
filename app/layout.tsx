@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning> 
       <body className={`${fontPoppins.className} antialiased`}>
         <Navbar/>
         <div className="container mx-auto px-4">{children}</div>
