@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import 'remixicon/fonts/remixicon.css'
+import "remixicon/fonts/remixicon.css";
 const fontPoppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -32,10 +32,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning> 
+    <html lang="en" suppressHydrationWarning>
       <body className={`${fontPoppins.className} antialiased`}>
-        <Navbar/>
-        <div className="container mx-auto px-4">{children}</div>
+        <Navbar />
+        <div className="container mx-auto px-20">{children}</div>
       </body>
     </html>
   );
