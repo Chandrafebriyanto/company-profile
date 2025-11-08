@@ -22,7 +22,7 @@ export default function Home() {
       {/* hero-image */}
 
       {/* Services */}
-      <div className="grid lg:grid-cols-3 mt-32 gap-10 md:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-3 mt-32 gap-10 md:grid-cols-2 grid-cols-1" id="Services">
         <div className="shadow-2xl p-7 rounded-2xl">
           <i className="ri-money-dollar-circle-fill ri-3x text-slate-700"></i>
           <p className="font-semibold text-2xl/normal mb-2">
@@ -57,7 +57,7 @@ export default function Home() {
       {/* Services */}
 
       {/* Projects */}
-      <div className="mt-32">
+      <div className="mt-32" id="Projects">
         <h1 className="text-4xl/normal text-center font-semibold">
           Our Projects
         </h1>
@@ -172,6 +172,31 @@ export default function Home() {
         </div>
       </div>
       {/* Projects */}
+
+      {/* contact */}
+      <div className="mt-32 flex items-center justify-between md:flex-row flex-col md:gap-0 gap-4" id="Contact">
+        <h2 className="text-3xl font-bold">Ngoding.</h2>
+        <div className="flex gap-10">
+          <Link href={"#Home"}>Home</Link>
+          <Link href={"#Services"}>Services</Link>
+          <Link href={"#Projects"}>Projects</Link>
+        </div>
+        <div className="flex gap-4">
+          <Link href={""}>
+            <i className="ri-youtube-fill ri-2x"></i>
+          </Link>
+          <Link href={""}>
+            <i className="ri-instagram-fill ri-2x"></i>
+          </Link>
+          <Link href={""}>
+            <i className="ri-reddit-fill ri-2x"></i>
+          </Link>
+          <Link href={""}>
+            <i className="ri-twitter-fill ri-2x"></i>
+          </Link>
+        </div>
+      </div>
+      {/* contact */}
     </>
   );
 }
