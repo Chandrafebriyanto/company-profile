@@ -2,28 +2,46 @@ import Image from "next/image";
 import DataImage from "@/public/data";
 import HeroInfo from "@/components/HeroInfo";
 import Link from "next/link";
+import * as motion from "motion/react-client";
 
 export default function Home() {
   return (
     <>
       {/* tittle */}
-      <div className="py-20">
+      <motion.div
+        className="py-20"
+        initial={{ opacity: 0, y: 50, scale: 0.8 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+      >
         <h1 className="sm:text-6xl/tight text-5xl/tight sm:text-center text-left">
           Welcome to Our Company
         </h1>
-      </div>
+      </motion.div>
       {/* tittle */}
 
       {/* hero-image */}
-      <div className="max-w-5xl mx-auto relative">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="max-w-5xl mx-auto relative"
+      >
         <Image src={DataImage.Hero} alt="Hero Image" priority />
         <HeroInfo />
-      </div>
+      </motion.div>
       {/* hero-image */}
 
       {/* Services */}
-      <div className="grid lg:grid-cols-3 mt-32 gap-10 md:grid-cols-2 grid-cols-1" id="Services">
-        <div className="shadow-2xl p-7 rounded-2xl">
+      <div
+        className="grid lg:grid-cols-3 mt-32 gap-10 md:grid-cols-2 grid-cols-1"
+        id="Services"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="shadow-2xl p-7 rounded-2xl"
+          viewport={{ once: true }}
+        >
           <i className="ri-money-dollar-circle-fill ri-3x text-slate-700"></i>
           <p className="font-semibold text-2xl/normal mb-2">
             provide the best price guarantee
@@ -32,8 +50,14 @@ export default function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cum
             odit reprehenderit, porro corrupti eum eaque. Sunt error quo vitae?
           </p>
-        </div>
-        <div className="shadow-2xl p-7 rounded-2xl">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          viewport={{ once: true }}
+          className="shadow-2xl p-7 rounded-2xl"
+        >
           <i className="ri-service-fill ri-3x text-slate-700"></i>
           <p className="font-semibold text-2xl/normal mb-2">
             Services that you can trust
@@ -42,8 +66,14 @@ export default function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cum
             odit reprehenderit, porro corrupti eum eaque. Sunt error quo vitae?
           </p>
-        </div>
-        <div className="shadow-2xl p-7 rounded-2xl">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1 }}
+          viewport={{ once: true }}
+          className="shadow-2xl p-7 rounded-2xl"
+        >
           <i className="ri-star-s-fill ri-3x text-slate-700"></i>
           <p className="font-semibold text-2xl/normal mb-2">
             focus on customer satisfaction
@@ -52,24 +82,40 @@ export default function Home() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cum
             odit reprehenderit, porro corrupti eum eaque. Sunt error quo vitae?
           </p>
-        </div>
+        </motion.div>
       </div>
       {/* Services */}
 
       {/* Projects */}
       <div className="mt-32" id="Projects">
-        <h1 className="text-4xl/normal text-center font-semibold">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl/normal text-center font-semibold"
+        >
           Our Projects
-        </h1>
-        <p className="text-base/loose text-center">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-base/loose text-center"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam,
           perferendis, mollitia vel ratione ullam eaque animi quas voluptatum
           dolores doloribus id itaque corrupti molestiae saepe necessitatibus
           iure expedita obcaecati architecto?
-        </p>
+        </motion.p>
 
         <div className="mt-20 grid lg:grid-cols-3 gap-10 md:grid-cols-2 grid-cols-1 ">
-          <div className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+          >
             <Image
               src={DataImage.Proyek1}
               alt="proyek image"
@@ -88,8 +134,14 @@ export default function Home() {
                 Lihat Website
               </Link>
             </div>
-          </div>
-          <div className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+          >
             <Image
               src={DataImage.Proyek2}
               alt="proyek image"
@@ -108,8 +160,14 @@ export default function Home() {
                 Lihat Website
               </Link>
             </div>
-          </div>
-          <div className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            viewport={{ once: true }}
+            className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+          >
             <Image
               src={DataImage.Proyek3}
               alt="proyek image"
@@ -128,8 +186,13 @@ export default function Home() {
                 Lihat Website
               </Link>
             </div>
-          </div>
-          <div className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+          >
             <Image
               src={DataImage.Proyek4}
               alt="proyek image"
@@ -148,8 +211,14 @@ export default function Home() {
                 Lihat Website
               </Link>
             </div>
-          </div>
-          <div className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+            className=" p-4 rounded-2xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl"
+          >
             <Image
               src={DataImage.Proyek5}
               alt="proyek image"
@@ -168,13 +237,16 @@ export default function Home() {
                 Lihat Website
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* Projects */}
 
       {/* contact */}
-      <div className="mt-32 flex items-center justify-between md:flex-row flex-col md:gap-0 gap-4" id="Contact">
+      <div
+        className="mt-32 flex items-center justify-between md:flex-row flex-col md:gap-0 gap-4"
+        id="Contact"
+      >
         <h2 className="text-3xl font-bold">Ngoding.</h2>
         <div className="flex gap-10">
           <Link href={"#Home"}>Home</Link>
